@@ -74,7 +74,10 @@ requests['connect'] = (params, ret) => {
     `Tag: ${tag}`
   );
 
-  let found = discordGuild.members.filterArray(val => (val.user.username+"#"+val.user.discriminator).match(new RegExp('.*' + tag + '.*')));
+  let found = discordGuild.members.filterArray(val => {
+    (val.user.username+"#"+val.user.discriminator).match(new RegExp('.*' + tag + '.*'));
+    error(val.user.username+"#"+val.user.discriminator);
+  });
   error(
     "[found]",
     found,
