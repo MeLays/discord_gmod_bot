@@ -75,8 +75,8 @@ requests['connect'] = (params, ret) => {
   );
 
   let found = discordGuild.members.filterArray(val => {
-    (val.user.username+"#"+val.user.discriminator).match(new RegExp('.*' + tag + '.*'));
-    error(val.user.username+"#"+val.user.discriminator);
+    (val.user.username+"#"+val.user.discriminator).includes(tag);
+    error(val.user.username+"#"+val.user.discriminator, tag);
   });
   error(
     "[found]",
