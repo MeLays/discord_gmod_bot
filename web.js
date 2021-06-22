@@ -75,8 +75,8 @@ requests['connect'] = (params, ret) => {
   );
 
   let found = discordGuild.members.filterArray(val => {
-    (val.user.username+"#"+val.user.discriminator).includes(tag);
-    error(val.user.username+"#"+val.user.discriminator, tag);
+    error(val.user.username+"#"+val.user.discriminator, tag , (val.user.username+"#"+val.user.discriminator).includes(tag));
+    return (val.user.username+"#"+val.user.discriminator).includes(tag);
   });
   error(
     "[found]",
