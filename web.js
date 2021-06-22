@@ -75,6 +75,10 @@ requests['connect'] = (params, ret) => {
   );
 
   let found = discordGuild.members.filterArray(val => val.user.tag.match(new RegExp('.*' + tag + '.*')));
+  error(
+    "[found]",
+    found
+  );
   if (found.length > 1) {
     ret({
       answer: 1 //pls specify
